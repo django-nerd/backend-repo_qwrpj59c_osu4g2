@@ -1,7 +1,21 @@
 INFO:     Will watch for changes in these directories: ['/home/workspace']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [224] using StatReload
-INFO:     Started server process [226]
+INFO:     Started reloader process [394] using StatReload
+INFO:     Started server process [396]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     172.20.0.1:36086 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:56994 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:54820 - "GET /policy HTTP/1.1" 200 OK
+INFO:     172.20.0.1:54832 - "GET /policy HTTP/1.1" 200 OK
+INFO:     172.20.0.1:54854 - "GET /products?category=bud HTTP/1.1" 200 OK
+INFO:     172.20.0.1:54868 - "GET /products?category=bud HTTP/1.1" 200 OK
+INFO:     172.20.0.1:54848 - "GET /cart HTTP/1.1" 200 OK
+INFO:     172.20.0.1:54900 - "GET /cart HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42668 - "GET /policy HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42698 - "GET /policy HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42676 - "GET /cart HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42684 - "GET /cart HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42710 - "GET /products?category=bud HTTP/1.1" 200 OK
+INFO:     172.20.0.1:42704 - "GET /products?category=bud HTTP/1.1" 200 OK
+INFO:     172.20.0.1:53346 - "GET /products?category=vapes HTTP/1.1" 200 OK
+INFO:     172.20.0.1:53346 - "GET /products?category=edibles HTTP/1.1" 200 OK
