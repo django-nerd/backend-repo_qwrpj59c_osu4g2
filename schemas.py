@@ -12,9 +12,15 @@ Model name is converted to lowercase for the collection name:
 """
 
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, Literal
 
-# Example schemas (replace with your own):
+# Compliance policy (used by server responses, not a collection)
+class Policy(BaseModel):
+    minimum_age: int = Field(21, description="Minimum legal age required to purchase")
+    allowed_categories: list[str] = Field(
+        default_factory=lambda: ["bud", "vapes", "edibles"],
+        description="Whitelisted product categories"
+    )
 
 class User(BaseModel):
     """
@@ -35,14 +41,7 @@ class Product(BaseModel):
     title: str = Field(..., description="Product title")
     description: Optional[str] = Field(None, description="Product description")
     price: float = Field(..., ge=0, description="Price in dollars")
-    category: str = Field(..., description="Product category")
+    category: Literal['bud', 'vapes', 'edibles'] = Field(..., description="Product category")
     in_stock: bool = Field(True, description="Whether product is in stock")
-
-# Add your own schemas here:
-# --------------------------------------------------
-
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
+    thc_mg: Optional[float] = Field(None, ge=0, description="THC milligrams per unit (if applicable)")
+    cbd_mg: Optional[float] = Field(None, ge=0, description="CBD milligrams per unit (if applicable)")
